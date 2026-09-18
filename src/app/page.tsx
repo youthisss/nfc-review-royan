@@ -80,7 +80,7 @@ export default function Home() {
       </header>
 
       <main id="konten" tabIndex={-1}>
-        <section className="hero" id="atas" aria-labelledby="hero-title" tabIndex={-1}>
+        <section className="hero" id="atas" aria-labelledby="hero-title">
           <div className="hero-copy">
             <h1 id="hero-title">Pelanggan puas?<br />Ajak cerita.<br /><span>Cukup satu tap.</span></h1>
             <p className="hero-lead">
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="how" id="cara-kerja" aria-labelledby="how-title" tabIndex={-1}>
+        <section className="how" id="cara-kerja" aria-labelledby="how-title">
           <Reveal className="how-copy">
             <p className="eyebrow">Lebih sedikit langkah</p>
             <h2 id="how-title">Pelayanan selesai.<br /><span>Cerita baik berlanjut.</span></h2>
@@ -117,7 +117,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="product" id="produk" aria-labelledby="product-title" tabIndex={-1}>
+        <section className="product" id="produk" aria-labelledby="product-title">
           <div className="product-heading">
             <p className="eyebrow">Produk utama</p>
             <h2 id="product-title">Display NFC Google Review</h2>
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="faq" id="faq" aria-labelledby="faq-title" tabIndex={-1}>
+        <section className="faq" id="faq" aria-labelledby="faq-title">
           <Reveal className="faq-intro">
             <p className="eyebrow">Sebelum memesan</p>
             <h2 id="faq-title">Kenalan dulu,<br /><span>baru pilih.</span></h2>
