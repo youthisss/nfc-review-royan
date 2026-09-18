@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root{--cream:#f5f1e7;--paper:#fffdf7;--ink:#202e26;--muted:#62685c;--green:#244d39;--green-dark:#193d2c;--lime:#d6e89b;--line:#d5d8c9;--ease:cubic-bezier(.22,1,.36,1);--header-height:80px;--content-width:1180px}
+:root{--cream:#f5f1e7;--paper:#fffdf7;--ink:#202e26;--muted:#62685c;--green:#244d39;--green-dark:#193d2c;--lime:#d6e89b;--line:#d5d8c9;--ease:cubic-bezier(.22,1,.36,1);--header-height:80px;--content-width:1180px;--section-space:clamp(4.5rem,8vh,6.5rem)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:var(--header-height)}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-nunito),Arial,sans-serif}
@@ -291,6 +291,31 @@ footer > p:last-child { grid-column: 2; text-align: right; }
   .hero { padding: 1rem 0; gap: 1rem; }
   .hero .eyebrow { font-size: .7rem; }
   .hero .hero-lead { font-size: .95rem; }
+}
+
+/* Consistent breathing room at every section boundary. */
+.hero, .how, .product, .use-cases, .faq { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+.use-cases { position: relative; }
+.use-cases::after {
+  content: "";
+  position: absolute;
+  left: max(2rem, calc((100% - var(--content-width)) / 2));
+  right: max(2rem, calc((100% - var(--content-width)) / 2));
+  bottom: 0;
+  height: 1px;
+  background: var(--line);
+}
+
+@media (max-width: 800px) {
+  :root { --section-space: 3.5rem; }
+  .hero, .how, .product, .use-cases, .faq { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+  .hero { padding-top: 2rem; }
+  .use-cases::after { left: 1.25rem; right: 1.25rem; }
+}
+
+@media (max-width: 360px) {
+  :root { --section-space: 3rem; }
+  .hero { padding-top: 1.5rem; }
 }
 .navigation-shell { display: flex; align-items: center; }
 .menu-toggle { display: none; }
