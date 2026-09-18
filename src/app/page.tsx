@@ -5,8 +5,9 @@ import { TapScene } from "@/components/tap-scene";
 import { SectionNav } from "@/components/section-nav";
 import { BackToTop } from "@/components/back-to-top";
 import { ProductArtwork, ReviewFlowArtwork } from "@/components/product-artwork";
+import { getSiteUrl } from "@/lib/site-url";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 const catalogUrl = process.env.NEXT_PUBLIC_LYNK_URL?.trim() || "#produk";
 const hasCatalog = catalogUrl !== "#produk";
 const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim();

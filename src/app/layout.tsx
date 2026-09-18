@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
 import Script from "next/script";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const nunito = Nunito_Sans({
@@ -9,7 +10,7 @@ const nunito = Nunito_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
@@ -27,7 +28,11 @@ export const viewport: Viewport = {
   themeColor: "#f4efdf",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="id" className={nunito.variable}>
       <body>{children}</body>
